@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动轮播图</title>
+	<style>
+		html,body,div,ul,li,img{
+			margin: 0;
+			padding: 0;
+		}
+		ul,ol,li{
+			list-style: none;
+		}
+		#outer {
+ 			width: 460px;
+ 			height: 308px;
+ 			position: relative;
+ 			margin: 100px auto;
+ 			overflow: hidden;
+		}
+		#inner{
+			height: 100%;
+			width: 100%;
+		}
+		#outer ul {
+			width: 1000%;
+			position: absolute;
+			left: 0;
+		}
+		#outer ul li {
+			float: left;
+		}
+		#arrow {
+
+			
+		}
+		.left,.right {
+			position: absolute;
+			width: 20px;
+			height: 40px;
+			background: rgba(0,0,0,0.3);
+			/*left: 0;*/
+			top: 50%;
+			transform: translateY(-50%);
+			color: white;
+			font: 700 30px/40px '宋体';
+			display: inline-block;
+			cursor: pointer;
+
+		}
+		#arrow .left{
+			left: 20px;
+		}
+		#arrow .right {
+			right: 20px;
+		}
+		#outer ol {
+			position: absolute;
+			bottom: 5px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		#outer ol li {
+			display: inline-block;
+			float: left;
+			width: 10px;
+			height: 10px;
+			border-radius: 5px;
+			background: rgba(255,200,0,0.5);
+			margin-left: 8px;
+		}
+		#outer ol li.now {
+			background: yellow;
+		}
+		
+	</style>
+	<script src="js/jquery-1.12.1.js"></script>
+	<!-- <script src="js/slider.js"></script> -->
+	<script src="js/slider-object.js"></script>
+	<script>
+		window.onload=function(){
+			var slider=new Fier.slider('outer','now');
+			slider._init();
+		}
+	</script>
+</head>
+<body>
+	<div id ="outer">
+		<div id ="inner">
+			<ul>
+				<li><img src="images/116.jpg" alt=""></li>
+				<li><img src="images/117.jpg" alt=""></li>
+				<li><img src="images/118.jpg" alt=""></li>
+				<li><img src="images/1.jpg" alt=""></li>
+				<li><img src="images/2.jpg" alt=""></li>
+				<li><img src="images/116.jpg" alt=""></li>
+			</ul>
+			<ol>
+				
+			</ol>
+		</div>
+		<div id="arrow">
+			<span class="left">&lt;</span>
+			<span class="right">&gt;</span>
+		</div>
+	</div>
+	
+</body>
+</html>
